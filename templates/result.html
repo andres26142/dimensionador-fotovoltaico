@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Calculator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class="container-sm" style="padding-top: 2%">
+    <h1 class="display-4">Dimensionado de sistemas fotovoltaicos</h1>
+    <h3 class="display-6">Parametros generales</h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Parametro</th>
+        <th scope="col">Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr class="table-success">
+        <th scope="row">1</th>
+        <td>Watts totales</td>
+        <td>{{ rs['watts_totales'] }} Watts</td>
+      </tr>
+      <tr class="table-success">
+        <th scope="row">2</th>
+        <td>Consumos promedio diario</td>
+        <td>{{ rs['consumo_diario'] }} Watts/hora</td>
+      </tr>
+      <tr class="table-success">
+        <th scope="row">3</th>
+        <td>Amperes-hora/dia</td>
+        <td>{{ rs['amperes_hora_dia'] }} A-H/Dia</td>
+      </tr>
+      <tr class="table-success">
+        <th scope="row">4</th>
+        <td>Amperes pico del arreglo</td>
+        <td>{{ rs['amperes_pico_arreglo'] }} A</td>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+        <td>Voltaje del sistema en CD</td>
+        <td>48V</td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>Horas solar pico</td>
+        <td>4</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 class="display-6">Baterias</h1>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Parametro</th>
+          <th scope="col">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr class="table-success">
+          <th scope="row">1</th>
+          <td>Baterias en serie</td>
+          <td>{{ rs['baterias_serie'] }}</td>
+        </tr>
+        <tr class="table-success">
+          <th scope="row">2</th>
+          <td>Bateria en paralelo</td>
+          <td>{{ rs['baterias_paralelo'] }}</td>
+        </tr>
+        <tr class="table-success">
+          <th scope="row">3</th>
+          <td>Baterias totales</td>
+          <td>{{ rs['baterias_totales'] }}</td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>Dias de autonomia</td>
+          <td>4 dias</td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td>Profundidad de descarga</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <th scope="row">6</th>
+          <td>Capacidad de bateria</td>
+          <td>{{ rs['capacidad_bateria'] }} Ah</td>
+        </tr>
+        <tr>
+          <th scope="row">7</th>
+          <td>Voltaje de la bateria</td>
+          <td>{{ rs['voltaje_bateria'] }} V</td>
+        </tr>
+        <tr>
+          <th scope="row">8</th>
+          <td>Eficiencia de la bateria</td>
+          <td>80%</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 class="display-6">Modulos</h1>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Parametro</th>
+            <th scope="col">Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+  
+          <tr class="table-success">
+            <th scope="row">1</th>
+            <td>Modulos en serie</td>
+            <td>{{ rs['modulos_serie'] }}</td>
+          </tr>
+          <tr class="table-success">
+            <th scope="row">2</th>
+            <td>Modulos en paralelo</td>
+            <td>{{ rs['modulos_paralelo'] }}</td>
+          </tr>
+          <tr class="table-success">
+            <th scope="row">3</th>
+            <td>Modulos totales</td>
+            <td>{{ rs['modulos_totales'] }}</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Voltaje de cada modulo</td>
+            <td>12V</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>Watts de cada modulo</td>
+            <td>90W</td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>Corriente pico</td>
+            <td>5A</td>
+          </tr>
+          <tr>
+            <th scope="row">7</th>
+            <td>Corriente de corto circuito</td>
+            <td>5.5A</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="display-6">Inversor</h1>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Parametro</th>
+              <th scope="col">Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+    
+            <tr class="table-success">
+              <th scope="row">1</th>
+              <td>Watts totales</td>
+              <td>{{ rs['watts_totales'] }} Watts</td>
+            </tr>
+            <tr class="table-success">
+              <th scope="row">2</th>
+              <td>Voltaje en CD</td>
+              <td>48V</td>
+            </tr>
+           
+            <tr>
+              <th scope="row">3</th>
+              <td>Eficiencia</td>
+              <td>90%</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+</body>
+
+</html>
