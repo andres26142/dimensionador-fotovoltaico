@@ -13,8 +13,12 @@ def calcular():
     if request.method == 'POST':
         
         
-        voltaje_bateria=int(request.form.get('voltaje'))
-        amperios_bateria=int(request.form.get('amperios'))
+        voltaje_bateria=float(request.form.get('voltaje'))
+        voltaje_panel=float(request.form.get('voltaje_paneles'))
+        corriente_pico=float(request.form.get('corriente_pico'))
+        corriente_corto=float(request.form.get('corriente_corto'))
+        watts_paneles=float(request.form.get('watts'))
+        amperios_bateria=float(request.form.get('amperios'))
         array = request.form.getlist('field[]')
         #Variables
         consumo_promeido_diario=0
@@ -43,8 +47,8 @@ def calcular():
         #Dimensionado del sistema
         amperes_pico=amperes_hora_dia/0.8/4
         #Numero de modulos fotovoltaicos
-        modulos_paralelo=round(amperes_pico/5)
-        modulos_serie=48/12
+        modulos_paralelo=round(amperes_pico/corriente_pico)
+        modulos_serie=48/voltaje_panel
         modulos_totales=modulos_paralelo*modulos_serie
 
         respuesta={
@@ -60,6 +64,10 @@ def calcular():
             "modulos_serie":int(modulos_serie),
             "modulos_paralelo":int(modulos_paralelo),
             "modulos_totales":int(modulos_totales),
+            "corriente_pico":corriente_pico,
+            "corriente_corto":corriente_corto,
+            "voltaje_paneles":voltaje_panel,
+            "watts_paneles":watts_paneles
 
         }
         
